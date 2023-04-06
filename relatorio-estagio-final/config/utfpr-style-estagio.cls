@@ -240,16 +240,16 @@
 	% define estilo das páginas iniciais (capas, resumo, sumário, etc)
 	\frontmatter
 	\pagestyle{frontmatter}
-	\input{text/pre-textuais/cover}
-	\input{text/pre-textuais/backcover}
-	\input{text/pre-textuais/termo}
+	\include{text/pre-textuais/cover}
+	\include{text/pre-textuais/backcover}
+	\include{text/pre-textuais/termo}
 
 	\ifthenelse{\boolean{temDedicatoria}}{
-		\input{text/pre-textuais/dedicatoria}
+		\include{text/pre-textuais/dedicatoria}
 	}{}
 
 	\ifthenelse{\boolean{temAgradecimento}}{
-		\input{text/pre-textuais/agradecimentos}
+		\include{text/pre-textuais/agradecimentos}
 	}{}
 	
 	\ifthenelse{\boolean{temFigura}}{
@@ -257,6 +257,7 @@
 		\setstretch{1.5}
 		\pagestyle{empty}\listoffigures
 	}{}
+	
 	
 	\ifthenelse{\boolean{temTabela}}{
 		\clearpage

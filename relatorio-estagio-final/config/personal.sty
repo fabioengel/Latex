@@ -20,3 +20,12 @@
 
 \renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries} %Define Sumário centralizado
 \renewcommand{\cftaftertoctitle}{\hfill\hfill}
+
+
+% Define a posição da lista de figuras no topo da página
+\renewcommand{\cftfigpagefont}{\normalfont} % fonte normal
+\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}} % pontos para preencher
+\renewcommand{\cftfigafterpnum}{\vskip\baselineskip} % espaço vertical após o número de página
+\setlength{\cftbeforefigskip}{\baselineskip} % espaço vertical antes da lista de figuras
+
+\hypersetup{pageanchor=false}
