@@ -1,0 +1,25 @@
+%Template para o relatório final de estágio
+%Autor: Fábio Engel de camargo
+
+\documentclass{config/utfpr-style-estagio}
+\input{./config/variaveis.tex}
+
+\begin{document}
+	\pretexto
+	% define estilo do corpo do documento (capítulos e apêndices)
+	\mainmatter
+	\pagestyle{mainmatter}
+	\include{./text/texto/01-introducao.tex}
+	\include{./text/texto/02-localestagio.tex}
+	\include{./text/texto/03-plano.tex}
+	\include{./text/texto/04-descricao.tex}
+	\include{./text/texto/05-conclusao.tex}
+	\include{./text/texto/06-consideracoes.tex} % Este é opcional. Comentar, caso não deseje utilizar.
+	
+	%Só se coloca este item caso o estagiário tenha citado algum trecho de livro, apostila, artigo da Internet, enfim, qualquer item  publicado ou de acesso livre ao público em geral.
+	\bibliography{bibliografia}
+	
+	%items opcionais. Comentar caso não utilize.
+	\include{./text/pos-textuais/apendice.tex}
+	\include{./text/pos-textuais/anexos.tex}
+\end{document}

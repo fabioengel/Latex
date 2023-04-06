@@ -1,0 +1,42 @@
+%Capa
+
+\begin{titlepage}
+	\newgeometry{
+		left=3cm, % margem esquerda
+		right=3cm, % margem direita
+		top=2.5cm, % margem superior
+		bottom=2.5cm % margem inferior
+	}
+	
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=0.5\textwidth]{fig/utfpr.eps}
+	\end{figure}
+	
+	%pula duas linhas
+	\vspace{2\baselineskip}
+	\def\curso#1{\gdef\@curso{#1}}
+	\makeatletter
+	\begin{center}
+		\large\textbf{\MakeUppercase{Curso de \@curso}}
+	\end{center}	
+	%
+	\vspace{3\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+	\begin{center}
+		{\large\@author}
+	\end{center}
+	
+	\vspace{4\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+	
+	\begin{center}
+		\large\textbf{RELATÓRIO DE ESTÁGIO CURRICULAR OBRIGATÓRIO REALIZADO NA EMPRESA \MakeUppercase{\@empresa}}
+	\end{center}
+	
+	\vfill% preenchimento vertical
+	\begin{center}
+		\textbf{\MakeUppercase{\@cidade}}\\
+		\anovalor
+	\end{center}
+
+\restoregeometry % restaura as margens padrão do documento
+\end{titlepage}

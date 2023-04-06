@@ -1,0 +1,22 @@
+%comandos personalizados
+\newboolean{temDedicatoria}
+\setboolean{temDedicatoria}{false}
+
+\newboolean{temAgradecimento}
+\setboolean{temAgradecimento}{false}
+
+\newboolean{temTabela}
+\setboolean{temTabela}{true}
+
+\newboolean{temFigura}
+\setboolean{temFigura}{true}
+
+
+% Redefine formato de lista de tabelas e figuras
+\renewcommand{\cftloftitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftafterlottitle}{\hfill}
+
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries} %Define Sumário centralizado
+\renewcommand{\cftaftertoctitle}{\hfill\hfill}

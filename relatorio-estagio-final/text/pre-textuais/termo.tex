@@ -1,0 +1,74 @@
+%Contra capa
+\makeatletter
+
+\newgeometry{
+	left=3cm, % margem esquerda
+	right=3cm, % margem direita
+	top=6cm, % margem superior
+	bottom=2.5cm % margem inferior
+}
+
+\begin{center}
+	\Large\textbf{\MakeUppercase{Termo de Aprovação}}
+\end{center}
+
+\begin{center}
+	\large{\MakeUppercase{\@author}}
+\end{center}
+
+\vspace{2\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+
+\begin{center}
+	Relatório de Estágio Curricular Obrigatório aprovado como requisito parcial à obtenção do título de \MakeUppercase{\@titulo}, pela Universidade Tecnológica Federal do Paraná - UTFPR, campus \@cidade.
+\end{center}
+
+\vspace{2\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+
+\begin{flushright}%% Alinhamento à direita
+	\begin{minipage}{0.5\textwidth}%% Caixa de texto
+		\@orientador\\\vspace{-0.5cm}
+		\begin{flushright}
+			Orientador
+		\end{flushright}		
+	\end{minipage}
+\end{flushright}
+
+\vspace{2\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+
+\begin{flushright}%% Alinhamento à direita
+	\begin{minipage}{0.5\textwidth}%% Caixa de texto
+		\@avaliador\\\vspace{-0.5cm}
+		\begin{flushright}
+			Membro da Banca de Avaliação
+		\end{flushright}		
+	\end{minipage}
+\end{flushright}
+
+\vspace{2\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+
+\begin{flushright}%% Alinhamento à direita
+	\begin{minipage}{0.5\textwidth}%% Caixa de texto
+		\@supervisor\\\vspace{-0.5cm}
+		\begin{flushright}
+			Supervisor do Estágio
+		\end{flushright}		
+	\end{minipage}
+\end{flushright}
+
+\vspace{2\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+
+\begin{flushright}%% Alinhamento à direita
+	\begin{minipage}{0.5\textwidth}%% Caixa de texto
+		\@prae\\\vspace{-0.5cm}
+		\begin{flushright}
+			Professor Responsável pelas Atividades de Estágio
+		\end{flushright}		
+	\end{minipage}
+\end{flushright}
+
+\vfill% preenchimento vertical
+\begin{center}
+	\@cidade, \@diaDefesa~de~\@mesDefesa~de~\anovalor
+\end{center}
+
+\restoregeometry % restaura as margens padrão do documento

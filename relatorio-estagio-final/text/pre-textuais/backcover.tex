@@ -1,0 +1,45 @@
+%Contra capa
+\makeatletter
+
+\newgeometry{
+	left=3cm, % margem esquerda
+	right=3cm, % margem direita
+	top=6cm, % margem superior
+	bottom=2.5cm % margem inferior
+}
+
+\begin{center}
+	\large\textbf{\MakeUppercase{\@author}}
+\end{center}
+
+\vspace{6\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+
+\begin{center}
+	\large\textbf{RELATÓRIO DE ESTÁGIO CURRICULAR OBRIGATÓRIO REALIZADO NA EMPRESA \MakeUppercase{\@empresa}}
+\end{center}
+
+\vspace{10\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+
+
+\begin{flushright}%% Alinhamento à direita
+	\begin{minipage}{0.5\textwidth}%% Caixa de texto
+		\hspace{1cm} Relatório de estágio curricular obrigatório apresentado ao Curso de Tecnologia em Sistemas para Internet, da Universidade Tecnológica Federal do Paraná, campus Toledo como requisito parcial para a obtenção do título de Tecnólogo.
+	\end{minipage}
+\end{flushright}
+
+\vspace{1\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+
+\begin{flushright}%% Alinhamento à direita
+	\begin{minipage}{0.5\textwidth}%% Caixa de texto
+		%Orientador: Prof. \@profTitulo~\@orientador\nolinebreak
+		Orientador: Prof. \@profTitulo~\@orientador
+	\end{minipage}
+\end{flushright}
+
+	\vfill% preenchimento vertical
+\begin{center}
+	\textbf{\MakeUppercase{\@cidade}}\\
+	\anovalor
+\end{center}
+
+\restoregeometry % restaura as margens padrão do documento
