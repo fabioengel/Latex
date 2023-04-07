@@ -124,9 +124,6 @@
 \captionsetup{font=footnotesize}	% fonte menor para as legendas
 \captionsetup{font+=singlespacing}	% legendas em espaço simples
 
-% espaçamento entre linhas
-%\singlespacing  %espaçamento 1
-%\onehalfspacing  %espaçamento de 1.5
 
 % relaxar o espaçamento entre caracteres; segundo o manual
 % http://texdoc.net/texmf-dist/doc/latex/l2tabu-english/l2tabuen.pdf,
@@ -237,20 +234,28 @@
 
 %Pré-texto
 \newcommand{\pretexto}{
+	
 	% define estilo das páginas iniciais (capas, resumo, sumário, etc)
 	\frontmatter
 	\pagestyle{frontmatter}
+	
+
 	\include{text/pre-textuais/cover}
 	\include{text/pre-textuais/backcover}
+	
+	\newgeometry{right=2.5cm,left=2.5cm,top=2.5cm,bottom=2.5cm}
 	\include{text/pre-textuais/termo}
-
+	
 	\ifthenelse{\boolean{temDedicatoria}}{
+		
 		\include{text/pre-textuais/dedicatoria}
+		
 	}{}
 
 	\ifthenelse{\boolean{temAgradecimento}}{
 		\include{text/pre-textuais/agradecimentos}
 	}{}
+	
 	
 	\ifthenelse{\boolean{temFigura}}{
 		\clearpage
@@ -264,12 +269,13 @@
 		\setstretch{1.5}
 		\listoftables
 	}{}
-	
-	\setstretch{1}
-		
+			
 	\clearpage
-	\tableofcontents
 
+	\tableofcontents
+	\restoregeometry
+	\setstretch{1}
+	
 }
 	
 % ajustes dos apêndices (título e sumário)
