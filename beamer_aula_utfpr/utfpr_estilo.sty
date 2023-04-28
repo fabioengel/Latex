@@ -1,0 +1,112 @@
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyvrb}
+\usetheme{Madrid}
+\usepackage[most]{tcolorbox}
+\usepackage{tcolorbox,url,tikzlings}
+\usepackage{geometry}
+\usepackage{pifont}
+\usepackage{xcolor}
+\usepackage{ulem}
+\usepackage{layout}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{subcaption}
+\tcbuselibrary{skins,xparse,listings}
+
+
+\definecolor{yellowUtf}{rgb}{1, 0.8, 0}
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=black}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=yellowUtf}
+\setbeamercolor*{palette tertiary}{use=structure,fg=black,bg=yellowUtf}
+\setbeamercolor*{palette quaternary}{use=structure,fg=white,bg=yellowUtf}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=black}
+\setbeamercolor{example text}{fg=black}
+\setbeamercolor{item projected}{bg=black}
+\setbeamercolor{block title}{use=structure,fg=black,bg=yellowUtf}
+\setbeamercolor{structure}{fg=black}
+
+%\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[square]
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{tikz}
+\definecolor{gold}{rgb}{0.85,.66,0}
+\newcommand{\colb}{\textcolor{blue}}
+\newcommand{\colr}{\textcolor{red}}
+\newcommand{\colg}{\textcolor{gold}}
+\newcommand{\coln}{\textcolor{green}}
+\newcommand{\colk}{\textcolor{black}}
+\newcommand{\colo}{\textcolor{orange}}
+\newcommand{\colnb}{\textcolor{green!50!black!100}}
+\newcommand{\colnbc}{\textcolor{green!70!black!100}}
+\newcommand{\colgb}{\textcolor{green!50!black!20}}
+\newcommand{\colbb}{\color{blue!50!black!20}}
+\usepackage{pifont}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand{\nomeTopico}[1]{
+\newcommand{\topico}{#1}
+}
+
+\newcommand{\nomeEmail}[1]{
+\newcommand{\email}{#1}
+}
+
+\newcommand{\barraInferior}[1]{
+\newcommand{\barraInf}{#1}
+}
+
+\newcommand{\shelluser}[1]{
+	\newcommand{\shelluserDisplay}{#1}
+}
+
+\setbeamertemplate{caption}[numbered]
+
+\defbeamertemplate*{footline}{mytheme}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.65\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\topico%\insertshortauthor~~(\insertshortinstitute)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\barraInf \hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\usebeamertemplate{mytheme}
+
+
+\beamertemplatetextbibitems
+\setbeamertemplate{navigation symbols}{}
+
+
+\newtcblisting{terminal}{size=small,halign title=flush left,
+	title={}, 
+	colback=white,colupper=black,colframe=gray!25,listing only,
+	listing options={style=tcblatex,language=sh,breaklines=true,columns=fullflexible,escapeinside=``},
+	every listing line={\myprompt}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        
+\newcommand{\SU}[1]{\gdef\myprompt{\colnb{\small\ttfamily\bfseries{#1{\textcolor{black}:}\textcolor{cyan!90}{\url{~}}{\textcolor{black}\$ }}}}}
+\newcommand{\customizeSU}[1]{\gdef\myprompt{#1 }}
+\newcommand{\StartConsole}{\gdef\myprompt{}}    
+
+
+%\newtcblisting{commandshell}{colback=black,colupper=white,colframe=black,
+%	listing only,listing options={language=sh},
+%	every listing line={\textcolor{green}{\small\ttfamily\bfseries \shelluserDisplay> }}}
+%
+
+\title{\topico}
+\date{\today}
+\institute{\vspace{-1cm}\email \\ \vspace{2cm} \includegraphics[width=.3\textwidth]{fig/utfpr}}
+\date{}
