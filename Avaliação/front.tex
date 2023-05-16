@@ -1,0 +1,17 @@
+%\newgeometry{top=2cm, bottom=1cm, left=1cm, right=1cm}	
+
+\noindent
+\begin{tabular}{p{0.12\textwidth}m{0.55\textwidth}p{0.2\textwidth}}
+	\multirow{4}{*}{\includegraphics[width=0.1\textwidth]{fig/brasao}} & \centering\scriptsize Ministério da Educação &\multirow{4}{*}{\includegraphics[width=0.25\textwidth]{fig/utfpr}} \\
+	&\centering{\scriptsize \bf Universidade Tecnológica Federal do Paraná}&\\
+	&\centering\scriptsize UTFPR - Campus Toledo&\\
+	&\centering\scriptsize Coord. Tecnologia em Sistemas para Internet&
+\end{tabular}
+
+\noindent
+\begin{tikzpicture}[]
+	\draw[line width=1pt, black] ([xshift=-0.5\textwidth]current page.north east) -- ([xshift=0.5\textwidth]current page.north east);
+	\draw[line width=1pt, yellowUtf] ([yshift=-0.1cm-\voffset,xshift=-0.5\textwidth]current page.north east) -- ([yshift=-0.1cm-\voffset,xshift=0.5\textwidth]current page.north east);
+\end{tikzpicture}
+
+%\restoregeometry
