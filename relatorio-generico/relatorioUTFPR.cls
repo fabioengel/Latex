@@ -20,3 +20,6 @@
 \chead{}
 \rhead{}
 \cfoot{Página \thepage\ / \pageref{LastPage}}
+
+%Remove número de subseção do cabeçalho
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
