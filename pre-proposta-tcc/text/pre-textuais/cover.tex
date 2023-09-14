@@ -1,0 +1,48 @@
+%Capa
+
+\begin{titlepage}
+	\newgeometry{
+		left=1.5cm, % margem esquerda
+		right=1.5cm, % margem direita
+		top=2cm, % margem superior
+		bottom=1.5cm % margem inferior
+	}
+	
+	\begin{center}
+	\Large	\textbf{Universidade Tecnológica Federal do Paraná – UTFPR}\\
+	\textbf{Campus Toledo}
+	\end{center}
+	\begin{center}
+		\textbf{Coordenação do Curso de Tecnologia em Sistemas para Internet}
+	\end{center}
+	
+	%pula duas linhas
+	\vspace{7\baselineskip}
+	
+	\def\curso#1{\gdef\@curso{#1}}
+	\makeatletter
+	\begin{center}
+		\large \textbf{PRÉ-PROPOSTA DE TRABALHO DE TCC}
+	\end{center}	
+	%
+	\vspace{1\baselineskip plus 1.5\baselineskip minus 0.5\baselineskip}
+	\begin{center}
+		{\large\MakeUppercase\@titulo}
+	\end{center}
+
+
+	\vfill% preenchimento vertical
+	
+	Aluno: \@author\\
+	
+	Orientador: Prof. \@profTitulo\ \@orientador 
+	
+	\vspace{5\baselineskip}
+	
+	\begin{center}
+		\textbf{\@cidade}\\
+		\textbf{\anovalor}
+	\end{center}
+\restoregeometry
+
+\end{titlepage}
