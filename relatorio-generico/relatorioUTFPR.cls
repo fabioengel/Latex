@@ -16,10 +16,11 @@
 
 \newcommand{\campus}[1]{Câmpus}
 
+\fancyhf{}
+\fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
-\chead{}
-\rhead{}
-\cfoot{Página \thepage\ / \pageref{LastPage}}
+\pagestyle{plain}
+%\cfoot{Página \thepage\ / \pageref{LastPage}}
 
 %Remove número de subseção do cabeçalho
 \renewcommand{\subsectionmark}[1]{\markright{#1}}
