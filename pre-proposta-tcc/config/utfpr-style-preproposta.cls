@@ -166,9 +166,6 @@
 }
 \makeatother
 
-\newcommand{\postexto}{	
-	Eita coisa doida
-}
 
 %Pré-texto
 \newcommand{\pretexto}{	
