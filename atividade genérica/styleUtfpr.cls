@@ -18,3 +18,5 @@
 \def\disciplina#1{\gdef\@disciplina{#1}}
 \def\atividade#1{\gdef\@atividade{#1}}
 \def\entrega#1{\gdef\@entrega{#1}}
+
+\newcommand{\test}[2]{(#1, #2)}
