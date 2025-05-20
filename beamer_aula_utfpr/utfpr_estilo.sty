@@ -5,17 +5,10 @@
 \usepackage[most]{tcolorbox}
 \usepackage{tcolorbox,url,tikzlings}
 \usepackage{geometry}
-\usepackage{pifont}
-\usepackage{xcolor}
-\usepackage{ulem}
-\usepackage{layout}
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage{hyperref}
-\usepackage{listings}
-\usepackage{subcaption}
 \tcbuselibrary{skins,xparse,listings}
-
+\usepackage{subcaption}
+\usepackage[most]{tcolorbox}
+\usepackage{tcolorbox,url,tikzlings}
 
 \definecolor{yellowUtf}{rgb}{1, 0.8, 0}
 \setbeamercolor*{palette primary}{use=structure,fg=white,bg=black}
@@ -37,6 +30,7 @@
 \usepackage{array}
 \usepackage{multirow}
 \usepackage{listings}
+\usepackage{tabularx}
 \usepackage{tikz}
 \definecolor{gold}{rgb}{0.85,.66,0}
 \newcommand{\colb}{\textcolor{blue}}
@@ -53,15 +47,15 @@
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 \newcommand{\nomeTopico}[1]{
-\newcommand{\topico}{#1}
+	\newcommand{\topico}{#1}
 }
 
 \newcommand{\nomeEmail}[1]{
-\newcommand{\email}{#1}
+	\newcommand{\email}{#1}
 }
 
 \newcommand{\barraInferior}[1]{
-\newcommand{\barraInf}{#1}
+	\newcommand{\barraInf}{#1}
 }
 
 \newcommand{\shelluser}[1]{
@@ -72,16 +66,16 @@
 
 \defbeamertemplate*{footline}{mytheme}
 {
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.65\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\topico%\insertshortauthor~~(\insertshortinstitute)
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\barraInf \hspace*{2em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
-  \end{beamercolorbox}}%
-  \vskip0pt%
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.65\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+			\usebeamerfont{author in head/foot}\topico%\insertshortauthor~~(\insertshortinstitute)
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+			\usebeamerfont{date in head/foot}\barraInf \hspace*{2em}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+	\end{beamercolorbox}}%
+	\vskip0pt%
 }
 \usebeamertemplate{mytheme}
 
@@ -90,23 +84,42 @@
 \setbeamertemplate{navigation symbols}{}
 
 
-\newtcblisting{terminal}{size=small,halign title=flush left,
-	title={}, 
-	colback=white,colupper=black,colframe=gray!25,listing only,
-	listing options={style=tcblatex,language=sh,breaklines=true,columns=fullflexible,escapeinside=``},
-	every listing line={\myprompt}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        
-\newcommand{\SU}[1]{\gdef\myprompt{\colnb{\small\ttfamily\bfseries{#1{\textcolor{black}:}\textcolor{cyan!90}{\url{~}}{\textcolor{black}\$ }}}}}
-\newcommand{\customizeSU}[1]{\gdef\myprompt{#1 }}
-\newcommand{\StartConsole}{\gdef\myprompt{}}    
-
-
-%\newtcblisting{commandshell}{colback=black,colupper=white,colframe=black,
-%	listing only,listing options={language=sh},
-%	every listing line={\textcolor{green}{\small\ttfamily\bfseries \shelluserDisplay> }}}
-%
-
 \title{\topico}
 \date{\today}
-\institute{\vspace{-1cm}\email \\ \vspace{2cm} \includegraphics[width=.3\textwidth]{fig/utfpr}}
+\institute{\vspace{-1cm}\email \\ \vspace{2cm} \includegraphics[width=.4\textwidth]{fig/utfpr.eps}}
 \date{}
+
+
+\newtcblisting{terminal}{size=small,halign title=flush left,
+	title={}, 
+	colback=black!85,colupper=white,colframe=gray!25,listing only,
+	listing options={style=tcblatex,language=sh,breaklines=true,columns=fullflexible,escapeinside=!!,showstringspaces=false,basicstyle=\ttfamily\footnotesize},
+	every listing line={\myprompt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        
+% Comando para definir o prompt com a possibilidade de customizar o conteúdo final
+
+\newcommand{\SUCustom}[2]{\gdef\myprompt{\colnb{\small\ttfamily\bfseries{#1}{\textcolor{white}:}\textcolor{blue!90!black!100}{\raisebox{-0.5ex}{\textasciitilde}}{\textcolor{white}#2 }}}}
+
+
+%\newcommand{\SUCustom}[2]{\gdef\myprompt{\colnb{\small\ttfamily\bfseries{#1{\textcolor{black}:}\textcolor{cyan!90}{\url{~}}{\textcolor{black}#2 }}}}}
+
+
+% Manter o comando original para facilitar o uso rápido com "~$"
+\newcommand{\SU}[1]{\SUCustom{#1}{\$}}
+
+% Customizar o prompt completamente
+\newcommand{\customizeSU}[1]{\gdef\myprompt{#1 }}
+
+\newcommand{\SUdir}[2]{\gdef\myprompt{\colnb{\small\ttfamily\bfseries{#1{\textcolor{white}{#2} }\textcolor{cyan!90}{}}}}}
+
+% Limpar o prompt
+\newcommand{\StartConsole}{\gdef\myprompt{}}
+
+
+\hypersetup{
+	colorlinks=true,     % Ativa as cores para links
+	linkcolor=black,      % Cor dos links internos (para seções e figuras, por exemplo)
+	urlcolor=blue       % Cor dos URLs
+	%citecolor=blue       % Cor das citações (opcional, se você tiver referências)
+}
