@@ -1,8 +1,0 @@
-\babel@toc {brazil}{}\relax 
-\beamer@sectionintoc {1}{Introdução e Contextualização}{3}{0}{1}
-\beamer@sectionintoc {2}{Problema de Pesquisa }{4}{0}{2}
-\beamer@sectionintoc {3}{Objetivos}{5}{0}{3}
-\beamer@sectionintoc {4}{Fundamentação Teórica Preliminar}{6}{0}{4}
-\beamer@sectionintoc {5}{Metodologia}{7}{0}{5}
-\beamer@sectionintoc {6}{Cronograma}{8}{0}{6}
-\beamer@sectionintoc {7}{Considerações Finais}{9}{0}{7}
