@@ -17,6 +17,6 @@
 \def\professor#1{\gdef\@professor{#1}}
 \def\disciplina#1{\gdef\@disciplina{#1}}
 \def\atividade#1{\gdef\@atividade{#1}}
-\def\entrega#1{\gdef\@entrega{#1}}
+\def\autor#1{\gdef\@autor{#1}}
 
 \newcommand{\test}[2]{(#1, #2)}
