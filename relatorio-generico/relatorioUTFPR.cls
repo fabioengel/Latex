@@ -2,7 +2,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{relatorioUTFPR}[02/10/2022]
 \LoadClass[12pt,a4paper,onseside]{article}
-\include{packages}
+\input{packages}
 
 %\newcommand{\name}[num]{definition}
 
